@@ -1,10 +1,12 @@
 package com.cse.swelabproject.Entity;
 
 import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
 @Entity(tableName = "book_table")
 public class Book {
-    private String bookId;
+    @PrimaryKey(autoGenerate = true)
+    private int bookId;
 
     private String bookTitle;
     private String image;
@@ -21,12 +23,20 @@ public class Book {
         this.price = price;
     }
 
-    public String getBookId() {
+    public int getBookId() {
         return bookId;
     }
 
-    public void setBookId(String bookId) {
+    public void setBookId(int bookId) {
         this.bookId = bookId;
+    }
+
+    public void setBookTitle(String bookTitle) {
+        this.bookTitle = bookTitle;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getBookTitle() {

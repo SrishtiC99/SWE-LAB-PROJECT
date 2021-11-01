@@ -1,10 +1,12 @@
 package com.cse.swelabproject.Entity;
 
 import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
 @Entity(tableName = "user_table")
 public class User {
-    private String userId;
+    @PrimaryKey(autoGenerate = true)
+    private int userId;
     private String name;
     private String emailId;
     private String password;
@@ -17,12 +19,28 @@ public class User {
         this.isAdmin = isAdmin;
     }
 
-    public String getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setEmailId(String emailId) {
+        this.emailId = emailId;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
     }
 
     public String getName() {
