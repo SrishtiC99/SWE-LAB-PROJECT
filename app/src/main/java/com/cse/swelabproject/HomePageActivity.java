@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -42,6 +43,11 @@ public class HomePageActivity extends AppCompatActivity {
 
     }
 
+    private void goToProfile(){
+        Intent intent = new Intent(HomePageActivity.this, ProfileActivity.class);
+        startActivity(intent);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.home_page_menu, menu);
@@ -52,7 +58,7 @@ public class HomePageActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.profile_menu:
-                // go to profile
+                goToProfile();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
