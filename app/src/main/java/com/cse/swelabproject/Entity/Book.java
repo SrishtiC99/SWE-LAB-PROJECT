@@ -3,8 +3,10 @@ package com.cse.swelabproject.Entity;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
+
 @Entity(tableName = "book_table")
-public class Book {
+public class Book implements Serializable {
     @PrimaryKey(autoGenerate = true)
     private int bookId;
 
