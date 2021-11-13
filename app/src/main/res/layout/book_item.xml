@@ -8,8 +8,8 @@
     android:paddingTop="16dp">
     <ImageView
         android:id="@+id/book_iv"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:src="@drawable/dummy_book"
         android:scaleType="centerCrop"/>
     <LinearLayout
@@ -21,19 +21,28 @@
             android:id="@+id/title_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:text="Book Title"
+            android:maxLines="2"
             android:textSize="24sp"/>
         <TextView
             android:id="@+id/rating_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="3.5 star"
+            android:textStyle="italic"
+            android:text="Rating: 3.5 star"
             android:textSize="20sp"/>
         <TextView
             android:id="@+id/price_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Rs. 500"
+            android:textSize="20sp"/>
+        <TextView
+            android:id="@+id/seller_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="By Srishti Kumari"
             android:textSize="20sp"/>
     </LinearLayout>
 </LinearLayout>

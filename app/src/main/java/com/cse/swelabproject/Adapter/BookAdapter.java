@@ -37,8 +37,9 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder>{
     public void onBindViewHolder(@NonNull @NotNull BookHolder holder, int position) {
         Book book = allBooks.get(position);
         holder.bookTitle.setText(book.getBookTitle());
-        holder.bookRating.setText(String.valueOf(book.getRating()));
-        holder.bookPrice.setText(String.valueOf(book.getPrice()));
+        holder.bookRating.setText("Rating: " + String.valueOf(book.getRating()));
+        holder.bookPrice.setText("Rs. " + String.valueOf(book.getPrice()));
+        holder.sellerName.setText("By " + book.getSellerName());
     }
 
     @Override
@@ -53,6 +54,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder>{
         private TextView bookTitle;
         private TextView bookRating;
         private TextView bookPrice;
+        private TextView sellerName;
 
         public BookHolder(@NonNull @NotNull View itemView) {
             super(itemView);
@@ -60,6 +62,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder>{
             bookTitle = itemView.findViewById(R.id.title_tv);
             bookRating = itemView.findViewById(R.id.rating_tv);
             bookPrice = itemView.findViewById(R.id.price_tv);
+            sellerName = itemView.findViewById(R.id.seller_name_tv);
         }
     }
 }

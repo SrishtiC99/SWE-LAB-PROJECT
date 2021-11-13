@@ -14,6 +14,8 @@ public class Book {
     private int quantity;
     private double price;
     private double rating;
+    private String sellerId;
+    private String sellerName;
 
     public Book(String bookTitle, String description, double price) {
         this.bookTitle = bookTitle;
@@ -77,5 +79,21 @@ public class Book {
 
     public void setRating(double rating) {
         this.rating = rating;
+    }
+
+    public String getSellerId() {
+        return sellerId;
+    }
+
+    public void setSellerId(String sellerId) {
+        this.sellerId = sellerId;
+    }
+
+    public String getSellerName() {
+        return sellerName;
+    }
+
+    public void setSellerName(String sellerName) {
+        this.sellerName = sellerName;
     }
 }

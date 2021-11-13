@@ -9,8 +9,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cse.swelabproject.Entity.Book;
+import com.cse.swelabproject.Entity.User;
 import com.cse.swelabproject.ViewModel.BookViewModel;
 
 public class BookUploadPageActivity extends AppCompatActivity {
@@ -25,6 +27,11 @@ public class BookUploadPageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.book_upload_page);
+
+        if(UtilsClass.currentUser == null){
+            // Launch Login Page
+            UtilsClass.currentUser = new User("Srishti Kumari", "xyz@gmail.com", "112233");
+        }
 
         Button uploadButton = findViewById(R.id.upload_button);
 
@@ -50,8 +57,12 @@ public class BookUploadPageActivity extends AppCompatActivity {
 
         Book book = new Book(title, description, price);
         book.setQuantity(quantity);
+        book.setSellerId(UtilsClass.currentUser.getName() + UtilsClass.currentUser.getEmailId());
+        book.setSellerName(UtilsClass.currentUser.getName());
 
         bookViewModel = ViewModelProviders.of(this).get(BookViewModel.class);
         bookViewModel.insert(book);
+        Toast.makeText(BookUploadPageActivity.this, "WOW You uploaded a new Book!!", Toast.LENGTH_SHORT).show();
+        finish();
     }
 }

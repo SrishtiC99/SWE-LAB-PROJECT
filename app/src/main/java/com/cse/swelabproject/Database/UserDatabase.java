@@ -9,7 +9,7 @@ import androidx.room.RoomDatabase;
 import com.cse.swelabproject.Dao.UserDao;
 import com.cse.swelabproject.Entity.User;
 
-@Database(entities = {User.class}, version = 1)
+@Database(entities = {User.class}, version = 2)
 public abstract class UserDatabase extends RoomDatabase {
     private static UserDatabase instance;
     public abstract UserDao getUserDao();
@@ -19,6 +19,7 @@ public abstract class UserDatabase extends RoomDatabase {
             instance = Room.databaseBuilder(context.getApplicationContext(),
                     UserDatabase.class,
                     "user_database")
+                    .fallbackToDestructiveMigration()
                     .build();
         }
         return instance;

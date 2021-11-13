@@ -9,7 +9,7 @@ import androidx.room.RoomDatabase;
 import com.cse.swelabproject.Dao.BookDao;
 import com.cse.swelabproject.Entity.Book;
 
-@Database(entities = {Book.class}, version = 1)
+@Database(entities = {Book.class}, version = 2)
 public abstract class BookDatabase extends RoomDatabase {
     private static BookDatabase instance;
     public abstract BookDao getBookDao();
@@ -18,7 +18,9 @@ public abstract class BookDatabase extends RoomDatabase {
         if(instance == null){
             instance = Room.databaseBuilder(context.getApplicationContext(),
                     BookDatabase.class,
-                    "book_database").build();
+                    "book_database")
+                    .fallbackToDestructiveMigration()
+                    .build();
         }
         return instance;
     }
