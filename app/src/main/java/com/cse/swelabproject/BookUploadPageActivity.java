@@ -28,11 +28,6 @@ public class BookUploadPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.book_upload_page);
 
-        if(UtilsClass.currentUser == null){
-            // Launch Login Page
-            UtilsClass.currentUser = new User("Srishti Kumari", "xyz@gmail.com", "112233");
-        }
-
         Button uploadButton = findViewById(R.id.upload_button);
 
         //bookIV = findViewById(R.id.book_iv);

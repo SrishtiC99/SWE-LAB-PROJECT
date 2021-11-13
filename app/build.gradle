@@ -46,5 +46,7 @@ dependencies {
     // Room Components
     implementation 'androidx.room:room-runtime:2.3.0'
 
+    // For Circular ImageView
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
     annotationProcessor 'androidx.room:room-compiler:2.3.0'
 }
