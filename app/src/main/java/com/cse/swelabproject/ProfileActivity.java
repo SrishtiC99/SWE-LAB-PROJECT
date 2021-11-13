@@ -16,6 +16,8 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         if(UtilsClass.currentUser == null){
             // Launch Login Page
+            // TODO Open Login activity from here and after login use the details and create a user.
+            //  Set this user to this static currentUser variable.
             UtilsClass.currentUser = new User("Srishti Kumari", "xyz@gmail.com", "112233");
         }
         setContentView(R.layout.activity_profile);
